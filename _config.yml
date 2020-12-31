@@ -2,4 +2,4 @@ title                    : "가나다"
 name                     : "취미코딩하는 개발자"
 description              : "블로그"
 url                      : "{{ site.url }}{{ site.baseurl }}/build/"
-baseurl                  : # 서브 경로가 있는 경우 기재
+baseurl                  : "{{ site.url }}{{ site.baseurl }}/build/"
