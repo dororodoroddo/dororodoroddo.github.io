@@ -1,0 +1,4 @@
+title                    : "가나다"
+name                     : "취미코딩하는 개발자"
+description              : "블로그"
+url                      : "{{ site.url }}{{ site.baseurl }}"
