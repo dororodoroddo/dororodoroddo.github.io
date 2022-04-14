@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+ <input type="text" id="ip">
+ <div id="app">
+ </div>
+ <button id="abc">보내기</button>
+
+ <script>
+  let key = 'devU01TX0FVVEgyMDIyMDQxNDEwMDIyODExMjQ2NDM=';
+  const $app = document.querySelector('#app');
+  const $btn = document.querySelector('#abc');
+  const $input = document.querySelector('#ip');
+  $btn.onclick = ()=>{
+   axios.post('https://www.juso.go.kr/addrlink/addrEngApi.do', {
+    responseType: 'json',
+    data: {
+       confmKey: key,
+       currentPage: 1,
+       countPerPage: 10,
+       keyword: $input.value,
+       resultType: 'json',
+    }
+  }).then((res)=>{
+    console.log(res)
+    $app.innerText = `${res}`;
+  }).catch((err)=>{
+   console.log(err);
+    $app.innerText = `${err}`;
+  })
+  }
+  
+ </script>
+</body>
+</html>
